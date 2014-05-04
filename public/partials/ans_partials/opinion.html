@@ -1,0 +1,6 @@
+<ul class="list-inline">
+    <li ng-repeat="opinion in option.opinion">
+        <input type="radio" ng-change="onSelected(questionnaire)"
+               ng-model="questionnaire.score" ng-value="opinion.value">{{opinion.text}}<br/>
+    </li>
+</ul>

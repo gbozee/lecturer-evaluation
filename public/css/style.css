@@ -1,0 +1,37 @@
+body {
+    padding-top: 40px;
+}
+
+.form-signup, .form-signin {
+    width: 400px;
+    margin: 0 auto;
+}
+.flash{
+	padding: 1em; border: 1px dotted black;
+}
+
+.home-buttons{
+    height: 150px;
+}
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: brown;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}

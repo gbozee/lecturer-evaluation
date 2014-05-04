@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <a href="#/" class="btn btn-primary">Back</a>
+            <div>
+                <h3>Available Courses</h3>
+                <input type="search" class="search-query" placeholder="Search" ng-model="searchText"/>
+                <table class="table table-striped table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Units</th>
+                        <th>Option</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+
+                    <tr ng-repeat="course in catalog | filter:{registered:false} | filter:searchText">
+                        <td>
+                            {{course.code}}
+                        </td>
+                        <td>
+                            {{course.title}}
+                        </td>
+                        <td>
+                            {{ course.units }}
+                        </td>
+                        <td>{{ course.option }}</td>
+                        <td>
+                            <button class="btn btn-primary btn-xs" ng-click="registerCourse(course)">Select</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="col-md-offset-4">
+                    <a href="#/" class="btn btn-primary">Done</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="well sidebar-nav">
+                <h4>Your Schedule</h4>
+
+                <div class="row" ng-repeat="course in catalog | filter:{registered:true}">
+                    <div class="col-md-12">
+
+                        <button class="btn btn-default btn-xs" ng-click="unregisterCourse(course)">X</button>
+                        {{course.code}} - {{course.units}} units
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
