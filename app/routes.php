@@ -90,3 +90,14 @@ Route::get('/register','UsersController@create');
 Route::get('/','UsersController@index');
 Route::resource('users','UsersController',array('only'=>array('index','create','store','show','destroy')));
 Route::resource('sessions','SessionsController',array('only' =>array('index','create','store','destroy')));
+
+Route::get('admin/lecturers_result', array('as' => 'evalutaion', function()
+{
+    $lecturers = Lecturer::all();
+    return View::make('result',compact('lecturers'));
+}));
+
+Routes::get('admin_login',array('as'=>'admin_login',function(){
+    return View::make('admin.create');
+}))
+

@@ -61,7 +61,14 @@ return array(
 	 */
 	'permission'=> function()
 	{
-		return Auth::check();
+		$email = Auth::user()->email;
+		$user = User::where('email', $email)->first();
+		if($user->is_admin){
+			return true;
+		}else{
+			return false;
+		}
+		// return Auth::check();
 		// return Auth::user()->is_admin;
 	},
 
@@ -99,7 +106,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'login_path' => '/login',
+	'login_path' => '/admin_login',
 
 	/**
 	 * The logout path is the path where Administrator will send the user when they click the logout link
