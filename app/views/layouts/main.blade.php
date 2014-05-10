@@ -17,8 +17,9 @@
                     @if(!Auth::guest())  
                     <li>                                  
                         {{HTML::link('logout','Logout')}} </li>
-                    @if(Auth::user()->isAdmin())
+                    @if(Auth::user()->is_admin)
                         <li>{{HTML::link('admin','Admin')}}</li>
+                        <li>{{HTML::link('lecturers_result','Evaluation Result')}}</li>
                     @endif
                     @else 
                     <li>{{ HTML::link('login', 'Login') }}</li>

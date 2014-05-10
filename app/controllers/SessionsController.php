@@ -29,10 +29,12 @@ class SessionsController extends \BaseController {
 		$attempt = Auth::attempt($user);
 
 		if($attempt)
+		{
+			if (Auth::user()->is_admin) return Redirect::to('/admin');
 			// return Redirect::intended('/')
 			return Redirect::route('users.show',array('id'=>Auth::user()->id))
 				->with('flash_message','You have been logged in!');
-
+		}
 		return Redirect::back()->withInput()->with('flash_message','Invalid credentials');
 	}
 

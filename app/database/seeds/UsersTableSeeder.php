@@ -15,14 +15,14 @@ class UsersTableSeeder extends Seeder {
         DB::table('users')->delete();
 
 			$abiola = User::create([
-                'matric_no'=>'070407043',
-                'first_name'=>'abiola',
+                'matric_no'=>'admin',
+                'first_name'=>'toyosi',
                 'last_name'=>'oyeniyi',
                 'is_admin' =>true,
-                'level'=>'300',
+                'level'=>'500',
                 'programme' => 'Computer Science',
                 'department' => 'Mathematical Sciences',
-                'email'=>'gbozee@gmail.com',
+                'email'=>'toyken13@gmail.com',
                 'password'=>'1234'
 			]);
 //            User::addCourse($abiola,[1,2,3,9]);
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder {
 //			$abiola->courses()->attach(3);
 //			$abiola->courses()->attach(9);
 
-			$u2 = User::create([
+		/*	$u2 = User::create([
                 'matric_no'=>'070407044',
                 'first_name'=>'tola',
                 'last_name'=>'oyeniyi',
@@ -40,14 +40,14 @@ class UsersTableSeeder extends Seeder {
                 'department' => 'Mathematical Sciences',
                 'email'=>'tolly@gmail.com',
                 'password'=>'1234'
-			]);
+			]);*/
 
 //        User::addCourse($u2,[3,4,8]);
 //            $u2->courses()->attach(3);
 //            $u2->courses()->attach(4);
 //            $u2->courses()->attach(8);
 
-			$u3 = User::create([
+			/*$u3 = User::create([
                 'matric_no'=>'070407048',
                 'first_name'=>'tomi',
                 'last_name'=>'oyeniyi',
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder {
                 'department' => 'Mathematical Sciences',
                 'email'=>'tmosco@gmail.com',
                 'password'=>'1234'
-			]);
+			]);*/
 //        User::addCourse($u3,[5,6,7,1]);
 //            $u3->courses()->attach(5);
 //            $u3->courses()->attach(6);

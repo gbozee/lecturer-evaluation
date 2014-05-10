@@ -106,7 +106,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'login_path' => '/admin_login',
+	'login_path' => '/login',
 
 	/**
 	 * The logout path is the path where Administrator will send the user when they click the logout link

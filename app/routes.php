@@ -65,7 +65,9 @@ Route::get('serverInfo/{id}',function($id){
     $user = User::with('courses')->find($id);
     $q = Questionnaire::with('questions')->first();
 
-    $courses = Course::with('lecturers')->where('level','<=',$user->level)->get(['id','units','code','option','title','level']);
+    $courses = Course::with('lecturers')->
+		where('level','<=',$user->level)->
+		get(['id','units','code','option','title','level']);
 //    $questionnaires = QAnswer::getUserQuestionnaires($user);
 
     $response['user'] = json_decode($user->toJson());
@@ -91,13 +93,13 @@ Route::get('/','UsersController@index');
 Route::resource('users','UsersController',array('only'=>array('index','create','store','show','destroy')));
 Route::resource('sessions','SessionsController',array('only' =>array('index','create','store','destroy')));
 
-Route::get('admin/lecturers_result', array('as' => 'evalutaion', function()
+Route::get('lecturers_result', array('before' => 'admin','as' => 'evalutaion', function()
 {
     $lecturers = Lecturer::all();
     return View::make('result',compact('lecturers'));
 }));
 
-Routes::get('admin_login',array('as'=>'admin_login',function(){
+Route::get('admin_login',array('as'=>'admin_login',function(){
     return View::make('admin.create');
-}))
+}));
 

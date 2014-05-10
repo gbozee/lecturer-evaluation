@@ -1,11 +1,12 @@
 <?php
 
 class Questionnaire extends \Eloquent {
-	protected $fillable = ['question','type'];
+	protected $fillable = ['programme','semester','session'];
 
     public static $rules = [
-        'question' => 'required',
-        'type' => 'required'
+        'programme' => 'required',
+        'semester' => 'required',
+		'session' => 'required'
     ];
 
     public function questions(){

@@ -60,7 +60,7 @@ return array(
 	        'title' => 'Couse Title',
 	        'type' => 'text'
 	    ),
-	    'unit' => array(
+	    'units' => array(
 	        'title' => 'Units',
 	        'type' => 'number',	        
 	    ),

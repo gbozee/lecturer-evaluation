@@ -31,7 +31,7 @@ return array(
 			'title'=>'Id'
 		),
 	    'programme' => array(
-	        'title' => 'Programme'
+	        'title' => 'Evaluation QuestionID'
 	    ),
 	    'semester' => array(
 	    	'title' => 'Semester',
@@ -48,7 +48,7 @@ return array(
 	 */
 	'edit_fields' => array(
 	    'programme' => array(
-	        'title' => 'Programme',
+	        'title' => 'Evaluation QuestionID',
 	        'type' => 'text'
 	    ),	
 	    'semester' => array(

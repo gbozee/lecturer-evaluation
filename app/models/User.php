@@ -64,9 +64,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->password;
 	}
 
-    public function isAdmin(){
-        return $this->is_admin;
-    }
+  
 
 	/**
 	 * Get the e-mail address where password reminders are sent.
@@ -124,7 +122,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
     public function getLecturers(){
-        $result = $result = Lecturer::join('course_lecturer','course_lecturer.lecturer_id','=','lecturers.id')
+        $result = Lecturer::join('course_lecturer','course_lecturer.lecturer_id','=','lecturers.id')
             ->leftJoin('course_user','course_user.course_id','=','course_lecturer.course_id')
             ->where('course_user.user_id','=',$this->id)->groupBy('lecturers.name')->get(['name','score']);
 

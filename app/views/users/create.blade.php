@@ -51,10 +51,6 @@
     	{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
     	
     </div>
-    <div class="form-group">
-    	{{Form::label('password','Confirm Password')}}
-    	{{ Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Confirm Password')) }}
-    </div>
     
     {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary btn-block'))}}
 {{ Form::close() }}
